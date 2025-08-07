@@ -45,17 +45,3 @@ gitGraph
 Khi làm một tính năng mới, tạo một branch với tên ở định dạng `mã-task-tên-tính-năng`, ví dụ `pwf-1410-new-hr-tab`.
 Sau khi xong tính năng tạo PR để merge vào `main`.
 Khi cần release thì sẽ tạo một release mới để build artifact.
-
-# Frontend update flow
-
-```mermaid
-graph LR
-A[fe-core] --> B[fe-template]
-B --> C[fe-hr]
-B --> D[fe-workspace]
-C --> E{has changes}
-E --> F(create PR)
-```
-
-- fe-core: chứa các component cho frontend và các utils hay dùng.
-- fe-template: Template để tạo các project frontend khác, khi tạo release ở fe-template, CI sẽ kiểm tra thay đổi và tạo PR ở các project frontend khác.
